@@ -1,4 +1,5 @@
 \documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$babel-lang$,$endif$$if(papersize)$$papersize$,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
+\usepackage{authblk}
 $if(fontfamily)$
 \usepackage[$fontfamilyoptions$]{$fontfamily$}
 $else$
@@ -14,7 +15,6 @@ $endif$
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[$if(fontenc)$$fontenc$$else$T1$endif$]{fontenc}
   \usepackage[utf8]{inputenc}
-\usepackage{indentfirst}
 $if(euro)$
   \usepackage{eurosym}
 $endif$
@@ -126,6 +126,11 @@ $if(strikeout)$
 % avoid problems with \sout in headers with hyperref:
 \pdfstringdefDisableCommands{\renewcommand{\sout}{}}
 $endif$
+$if(indent)$
+$else$
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+$endif$
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -156,7 +161,10 @@ $if(title)$
 \title{$title$$if(subtitle)$\\\vspace{0.5em}{\large $subtitle$}$endif$}
 $endif$
 $if(author)$
-\author{$for(author)$$author$$sep$ \and $endfor$}
+\author{$author$}
+$endif$
+$if(affil)$
+\affil{$for(affil)$\emph{$affil$}$sep$ \\ $endfor$}
 $endif$
 \date{$date$}
 $for(header-includes)$
