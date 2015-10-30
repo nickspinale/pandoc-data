@@ -2,5 +2,5 @@
 
 Various templates and auxiliary files for using pandoc.
 
-Many templates come from [jgm/pandoc-templates](https://github.com/jgm/pandoc-templates).
+Templates from `templates/defaults` come from [jgm/pandoc-templates](https://github.com/jgm/pandoc-templates).
 

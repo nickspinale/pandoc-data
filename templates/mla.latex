@@ -1,0 +1,7 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage{ifpdf}
+\usepackage{mla}
+\begin{document}
+\begin{mla}{$first$}{$last$}{$professor$}{$class$}{$date$}{$title$}
+\end{mla}
+\end{document}
